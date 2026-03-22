@@ -1,0 +1,224 @@
+.portfolio-wrapper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-section {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 8rem 2.4rem 10rem;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 5.6rem;
+}
+
+.portfolio-header h2 {
+  font-size: clamp(3.2rem, 4.5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin-bottom: 1.6rem;
+}
+
+.portfolio-header p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-light);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.2rem;
+}
+
+.portfolio-card {
+  background: var(--white);
+  border: 1.5px solid rgba(43, 57, 144, 0.3);
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s,
+    border-color 0.25s;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 8px 28px rgba(43, 57, 144, 0.1);
+  transform: translateY(-4px);
+  border-color: rgba(43, 57, 144, 0.18);
+}
+
+.p-card-body {
+  padding: 3.2rem 3.2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  flex: 1;
+}
+
+.card-title {
+  font-size: clamp(2rem, 2.2vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+}
+
+.card-desc {
+  font-size: 1.7rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 0.8rem;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.portfolio-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.btn-learn {
+  margin: 2rem auto;
+  width: 80%;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #2b39903d;
+  border-radius: 1rem;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--brand);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.btn-learn:hover {
+  background: var(--brand-light);
+}
+
+.btn-learn svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  fill: none;
+  transition: transform 0.2s;
+}
+
+.btn-learn:hover svg {
+  transform: translateX(3px);
+}
+
+.cta-banner {
+  background: var(--white);
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 3rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.2rem;
+  flex-wrap: wrap;
+}
+
+.cta-banner-text h3 {
+  font-size: clamp(2.2rem, 2.8vw, 2.8rem);
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+.cta-banner-text h3 .highlight {
+  color: var(--brand);
+}
+
+.cta-banner-text p {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.btn-expert {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 2.8rem;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.55rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(43, 57, 144, 0.22);
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-expert:hover {
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(43, 57, 144, 0.32);
+}
+
+.btn-expert svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .p-card-body {
+    padding: 2.4rem 2.4rem 2rem;
+  }
+  .cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.8rem 2.4rem;
+  }
+}

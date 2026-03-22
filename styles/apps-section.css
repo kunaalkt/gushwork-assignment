@@ -1,0 +1,165 @@
+.apps-wrapper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.apps-section {
+  padding: 8rem 0 10rem;
+  overflow: hidden;
+}
+
+.apps-header {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3.2rem;
+  margin-bottom: 5.6rem;
+}
+
+.apps-header-text h2 {
+  font-size: clamp(3.2rem, 4.5vw, 5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin-bottom: 1.6rem;
+  max-width: 800px;
+}
+
+.apps-header-text p {
+  font-size: 2rem;
+  color: var(--text-mid);
+  font-weight: 500;
+  line-height: 1.65;
+  max-width: 800px;
+}
+
+.apps-nav {
+  display: flex;
+  gap: 1.2rem;
+  flex-shrink: 0;
+  align-self: center;
+  padding-top: 0.4rem;
+}
+
+.nav-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.nav-btn:hover {
+  background: #f0f2ff;
+  border-color: #2b3990;
+  transform: scale(1.07);
+}
+
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  transform: none;
+}
+
+.nav-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--text-dark);
+  stroke-width: 2;
+  fill: none;
+}
+
+.carousel-viewport {
+  padding-left: calc((100vw - 1240px) / 2 + 2.4rem);
+  overflow: hidden;
+}
+
+@media (max-width: 1264px) {
+  .carousel-viewport {
+    padding-left: 2.4rem;
+  }
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.app-card {
+  flex-shrink: 0;
+  width: 380px;
+  height: 440px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.app-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.app-card:hover img {
+  transform: scale(1.05);
+}
+
+.app-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.02) 30%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+  border-radius: var(--radius);
+  pointer-events: none;
+}
+
+.a-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.8rem;
+  z-index: 2;
+}
+
+.a-card-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+}
+
+.a-card-desc {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+  .app-card {
+    width: 300px;
+    height: 380px;
+  }
+}
